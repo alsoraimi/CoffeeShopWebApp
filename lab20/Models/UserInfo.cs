@@ -9,6 +9,7 @@ namespace lab20.Models
     {
         private string FirstName;
         private string LastName;
+        private string UserName;
         private string Email;
         private string Password;
 
@@ -36,6 +37,19 @@ namespace lab20.Models
             set
             {
                 LastName = value;
+            }
+        }
+
+        public string UserName1
+        {
+            get
+            {
+                return UserName;
+            }
+
+            set
+            {
+                UserName = value;
             }
         }
 
@@ -73,15 +87,17 @@ namespace lab20.Models
         {
             FirstName = "";
             LastName = "";
+            UserName = "";
             Email = "";
             Password = "";
 
         }
 
-        public UserInfo(string firstName, string lastName, string email, string password)
+        public UserInfo(string firstName, string lastName, string email, string password, string username)
         {
             FirstName = firstName;
             LastName = lastName;
+            UserName = username;
             Email = email;
             Password = password;
         }

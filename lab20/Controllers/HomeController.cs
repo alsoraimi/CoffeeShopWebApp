@@ -33,7 +33,8 @@ namespace lab20.Controllers
         }
         public ActionResult AddUser(UserInfo NewUser)
         {
-
+            //MUST VALIDATE HERE!!!!!
+            // TO ADD THE DATA FROM THE MODEL TO THE DATABASE
             return View(NewUser); //pass the newuser model to the adduser view. another way to pass more info than what view bag does.
         }
   
