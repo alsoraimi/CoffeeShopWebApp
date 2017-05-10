@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using lab20.Models;
 
 namespace lab20.Controllers
 {
@@ -30,11 +31,10 @@ namespace lab20.Controllers
 
             return View();
         }
-        public ActionResult AddUser(string FirstName)
+        public ActionResult AddUser(UserInfo NewUser)
         {
-           string fName = FirstName;
-           ViewBag.fname = FirstName;
-            return View();
+
+            return View(NewUser); //pass the newuser model to the adduser view. another way to pass more info than what view bag does.
         }
   
     }
