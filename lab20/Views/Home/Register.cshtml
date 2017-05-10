@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<form action="/Home/AddUser">
+    First Name: <input type="text" name="FirstName"/><br />
+    Last Name: <input type="text" name="LastName"/><br />
+    Email: <input type="text" name="Email" /><br />
+    Phone Number: <input type="text" name="PhoneNumber"/><br />
+    Password: <input type="password" name="PassWord"/><br />
+    <input type="submit" />
+
+
+
+   
+ </form>*@
+
+<form class="form-horizontal" action="/Home/AddUser">
+    <div class="form-group">
+        <label for="FirstName" class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="LastName" class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="Password" name="Password"placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
