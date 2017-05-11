@@ -3,9 +3,19 @@
     ViewBag.Title = "AddUser";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    body {
+        background-image: url("../../img/coffeebean.jpeg");
+        background-repeat: no-repeat;
+    }
+    h1, h2 {
+        color: #49ff00;
+    }
+</style>
 
- @*USE LOWER CASE M IN MODEL WHEN YOU SPECIFY MODEL TYPE, WHEN YO SPECIFY VARIABLE YOU USE CAPITAL M IN MODEL*@
-@model lab20.Models.UserInfo
-<h1>Welcome,  @Model.UserFirstName @Model.UserLastName !</h1>  @*diff way to do view bag. @model  Is the key word*@
-<h2>Your UserName is @Model.UserName1</h2>
+    @*USE LOWER CASE M IN MODEL WHEN YOU SPECIFY MODEL TYPE, WHEN YO SPECIFY VARIABLE YOU USE CAPITAL M IN MODEL*@
+    @model lab20.Models.UserInfo
+    <h1>Welcome,  @Model.UserFirstName @Model.UserLastName !</h1>  @*diff way to do view bag. @model  Is the key word*@
+    <h2>Your UserName is @Model.UserName1</h2>
 
+    
