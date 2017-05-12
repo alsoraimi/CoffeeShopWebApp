@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using lab20.Models;
+using System.Data.SqlClient;
 
 namespace lab20.Controllers
 {
@@ -11,6 +12,11 @@ namespace lab20.Controllers
     {
         public ActionResult Index()
         {
+            CoffeeShopDBEntities CoffeeShopDB = new CoffeeShopDBEntities();
+            List<Item> ItemList = CoffeeShopDB.Items.ToList();
+            ViewBag.ItemList = ItemList;
+
+
             return View();
         }
         public ActionResult Register()

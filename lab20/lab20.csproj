@@ -80,6 +80,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -202,7 +204,25 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CoffeeDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoffeeDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CoffeeDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoffeeDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CoffeeDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoffeeDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>CoffeeDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -215,10 +235,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\CoffeeDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoffeeDB.edmx</DependentUpon>
+      <LastGenOutput>CoffeeDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CoffeeDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoffeeDB.edmx</DependentUpon>
+      <LastGenOutput>CoffeeDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\CoffeeDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CoffeeDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CoffeeDB.edmx.diagram">
+      <DependentUpon>CoffeeDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -279,6 +316,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

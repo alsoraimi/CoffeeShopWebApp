@@ -2,6 +2,34 @@
     ViewBag.Title = "Home Page";
 }
 
-<body background="/HTMLpics/coffeebean.jpg">
+
     <h1>Welcome to GC Coffee <a href="/Home/Register">Register Here!!</a></h1>
-</body>
+<style>
+    .icon {
+        height:100%;
+        width: auto;
+    }
+</style>
+
+
+<h2>ITEMS</h2>
+
+ <table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var element in ViewBag.ItemList)
+    {
+        <tr>
+            <td><img class="icon" src="@element.ImagePath" />@element.Name</td>
+            <td>@element.Description</td>
+            <td>@element.Quantity</td>
+            <td>@element.Price</td>
+        </tr>
+
+    }
+</table>
+         
