@@ -12,8 +12,14 @@
 </style>
 
 
-<h2>ITEMS</h2>
 
+<br />
+<br />
+<a href="/Home/AddItem">Add New Item</a>
+<br />
+
+<h2>ITEMS</h2>
+<form action="SaveUpdates" method="post">
  <table class="table">
     <tr>
         <th>Name</th>
@@ -24,12 +30,15 @@
     @foreach (var element in ViewBag.ItemList)
     {
         <tr>
-            <td><img class="icon" src="@element.ImagePath" />@element.Name</td>
+            <td>@element.Name</td>    
             <td>@element.Description</td>
             <td>@element.Quantity</td>
             <td>@element.Price</td>
+            <td><a href="/Home/DeleteItem?Name=@element.Name" onclick="return confirm('Are you sure?')"><span class="glyphicon glyphicon-remove"></span></a></td>
+            <td><a href="/Home/UpdateItem?Name=@element.Name"><span class="glyphicon glyphicon-edit"></span></a></td>
         </tr>
 
     }
 </table>
+ </form>
          

@@ -3,9 +3,6 @@
   <EntityType Name="Item">
     <Key>
       <PropertyRef Name="Name" />
-      <PropertyRef Name="Description" />
-      <PropertyRef Name="Quantity" />
-      <PropertyRef Name="Price" />
     </Key>
     <Property Name="Name" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
