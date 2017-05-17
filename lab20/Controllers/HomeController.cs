@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using lab20.Models;
 using System.Data.SqlClient;
+using Microsoft.AspNet.Identity;
 
 namespace lab20.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -69,15 +71,26 @@ namespace lab20.Controllers
 
         public ActionResult SaveUpdates(Item ToBeUpdated)
         {
-            CoffeeShopDBEntities CoffeeShopDB = new CoffeeShopDBEntities();
-            Item ToFind = CoffeeShopDB.Items.Find(ToBeUpdated.Name);
-            ToFind.Description = ToBeUpdated.Description;
-            ToFind.Price = ToBeUpdated.Price;
-            ToFind.Quantity = ToBeUpdated.Quantity;
+            try
+            {
 
-            CoffeeShopDB.SaveChanges();
-            return RedirectToAction("Index");
+                CoffeeShopDBEntities CoffeeShopDB = new CoffeeShopDBEntities();
+                Item ToFind = CoffeeShopDB.Items.Find(ToBeUpdated.Name);
+                ToFind.Description = ToBeUpdated.Description;
+                ToFind.Price = ToBeUpdated.Price;
+                ToFind.Quantity = ToBeUpdated.Quantity;
 
+                CoffeeShopDB.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+
+            catch(Exception)
+            {
+                ViewBag.ErrorMessage = "Sorry! There seems to be an error.";
+                return View("ErrorMessages");
+
+            }
 
 
         }
@@ -90,26 +103,30 @@ namespace lab20.Controllers
         public ActionResult SaveNewItem(Item NewItem)
         {
 
-            CoffeeShopDBEntities CoffeeShopDB = new CoffeeShopDBEntities();
-            CoffeeShopDB.Items.Add(NewItem);
-            CoffeeShopDB.SaveChanges();
+            try
+            {
+                CoffeeShopDBEntities CoffeeShopDB = new CoffeeShopDBEntities();
+                CoffeeShopDB.Items.Add(NewItem);
+                CoffeeShopDB.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+
+            catch(Exception)
+            {
+                ViewBag.ErrorMessage = "Sorry! There seems to be an error.";
+                return View("ErrorMessages");
+
+            }
 
 
         }
 
 
-
-
-        public ActionResult Register()
-        {
-            return View();
-        }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = $"The user ID is {User.Identity.GetUserId()}, user name is {User.Identity.GetUserName()}";
 
             return View();
         }

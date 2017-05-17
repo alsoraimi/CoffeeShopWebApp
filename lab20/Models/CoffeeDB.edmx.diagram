@@ -6,6 +6,15 @@
     <edmx:Diagrams>
       <Diagram DiagramId="966f8eb4252d4c58b412e044728152f4" Name="Diagram1">
         <EntityTypeShape EntityType="CoffeeShopDBModel.Item" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeShopDBModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CoffeeShopDBModel.AspNetRole" Width="1.5" PointX="3.75" PointY="2.5" />
+        <EntityTypeShape EntityType="CoffeeShopDBModel.AspNetUserClaim" Width="1.5" PointX="8.25" PointY="3.625" />
+        <EntityTypeShape EntityType="CoffeeShopDBModel.AspNetUserLogin" Width="1.5" PointX="8.25" PointY="1" />
+        <EntityTypeShape EntityType="CoffeeShopDBModel.AspNetUser" Width="1.5" PointX="6" PointY="1.125" />
+        <EntityTypeShape EntityType="CoffeeShopDBModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" />
+        <AssociationConnector Association="CoffeeShopDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="CoffeeShopDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="CoffeeShopDBModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

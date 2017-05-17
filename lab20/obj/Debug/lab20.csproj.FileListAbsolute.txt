@@ -80,3 +80,7 @@ c:\users\abe\documents\visual studio 2015\Projects\lab20\lab20\bin\Microsoft.Owi
 c:\users\abe\documents\visual studio 2015\Projects\lab20\lab20\obj\Debug\lab20.csprojResolveAssemblyReference.cache
 c:\users\abe\documents\visual studio 2015\Projects\lab20\lab20\obj\Debug\lab20.dll
 c:\users\abe\documents\visual studio 2015\Projects\lab20\lab20\obj\Debug\lab20.pdb
+C:\Users\abe\documents\visual studio 2015\Projects\lab20\lab20\obj\Debug\lab20.Migrations.InitialCreate.resources
+C:\Users\abe\documents\visual studio 2015\Projects\lab20\lab20\obj\Debug\lab20.csproj.GenerateResource.Cache
+C:\Users\abe\documents\visual studio 2015\Projects\lab20\lab20\obj\Debug\lab20.Migrations.AddUserName.resources
+C:\Users\abe\documents\visual studio 2015\Projects\lab20\lab20\obj\Debug\lab20.Migrations.UserName2.resources
